@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base th:href="${#request.getContextPath() + '/'}"/>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>城市编号</td>
+        <td>城市名称</td>
+        <td>城市拼音</td>
+        <td>酒店数量</td>
+        <td>创建时间</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${city.getId()}">城市编号</td>
+        <td th:text="${city.getCityName()}">城市名称</td>
+        <td th:text="${city.getCityPinyin()}">城市拼音</td>
+        <td th:text="${city.getHotalNumber()}">酒店数量</td>
+        <td th:text="${city.getCreateTime()}">创建时间</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

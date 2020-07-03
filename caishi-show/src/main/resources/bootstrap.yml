@@ -1,23 +1,28 @@
 spring:
   application:
-    name: mirco-users
+    name: caishi-show
   profiles:
     #    active: dev #开发环境，prod生产环境，test测试环境
     active: dev
+  datasource:
+    url: jdbc:mysql://192.168.1.108:3306/caishibrother?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: e56fa75e-6506-490c-a921-3b35509f2969 #指定配命名空间ID上去注册
+        server-addr: 192.168.1.108:8848
+        namespace: dev-123456 #指定配命名空间ID上去注册
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.1.108:8848
         file-extension: yaml #指定yml格式的配置
         group: DEV_GROUP #指定配置文件在nacos中的分组，不指定默认会在DEFAULT的分组找
-        namespace: e56fa75e-6506-490c-a921-3b35509f2969 #指定配置文件在nacos中所属的命名空间ID
+        namespace: dev-123456 #指定配置文件在nacos中所属的命名空间ID
 management:
   endpoints:
     web:
       exposure:
         include: '*'
 #${spring.application.name}-${spring.profiles.active}. ${file-extension}
-#按照本配置，配置中的文件名应该为nacos-config-center-dev.yaml
+#按照本配置，配置中的文件名应该为caishi-show-dev.yaml

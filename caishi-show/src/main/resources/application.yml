@@ -1,3 +1,10 @@
+spring:
+  datasource:
+    url: ${spring.datasource.url}
+    type: ${spring.datasource.type}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+
 server:
   port: ${server.port}
 #开启Feign的断路器功能
@@ -24,3 +31,38 @@ ribbon:
   MaxAutoRetries: ${ribbon.MaxAutoRetries}
   #配置ribbon的下个服务的重试次数，默认是1
   MaxAutoRetriesNextServer: ${ribbon.MaxAutoRetriesNextServer}
+
+mybatis-plus:
+  type-aliases-package: ${mybatis-plus.type-aliases-package}
+  mapper-locations: ${mybatis-plus.mapper-locations}
+#上次至阿里云的相关配置
+oss:
+  endpoint: ${oss.endpoint}
+  accessKeyId: ${oss.accessKeyId}
+  bucketName: ${oss.bucketName}
+  accessKeySecret: ${oss.accessKeySecret}
+
+#配置Hystrix的常用属性
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          #资源隔离的策略，线程池隔离（默认）、信号量隔离（SEMAPHORE）
+          strategy: ${hystrix.command.default.execution.isolation.strategy}
+          #hystrix超时时间，默认1秒
+          thread:
+            timeoutInMilliseconds: ${hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds}
+        timeout:
+          #是否开启Hystrix的超时时间， 默认为true，如果设置为false，
+          #意为不超时，但是Feign的超时仍然起作用
+          enabled: ${hystrix.command.default.execution.timeout.enabled}
+      #熔断器的相关配置，默认打开熔断器
+      circuitBreaker:
+        enabled: ${hystrix.command.default.circuitBreaker.enabled}
+        #单位时间内，失败的次数，如果达到这个阈值，那么熔断器就会打开，默认20次
+        requestVolumeThreshold: ${hystrix.command.default.circuitBreaker.requestVolumeThreshold}
+        #多久之后，熔断器进入半开状态，默认5S
+        sleepWindowInMilliseconds: ${hystrix.command.default.circuitBreaker.sleepWindowInMilliseconds}
+
+

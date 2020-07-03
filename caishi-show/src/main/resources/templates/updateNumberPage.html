@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base th:href="${#request.getContextPath() + '/'}"/>
+    <title>编辑酒店数量</title>
+</head>
+<body>
+<form action="/admin/updateHotelNumber" method="post">
+<thead>
+<tr>
+    <td>城市编号</td>
+    <td>城市名称</td>
+    <td>城市拼音</td>
+    <td>酒店数量</td>
+    <td>创建时间</td>
+</tr>
+</thead>
+    <hr/>
+<tbody>
+<tr>
+    <td><input type="hidden" name="id" th:value="${city.getId()}"></td>
+    <td th:text="${city.getId()}">城市编号</td>
+    <td th:text="${city.getCityName()}">城市名称</td>
+    <td th:text="${city.getCityPinyin()}">城市拼音</td>
+    <td><input type="text" name="number" th:value="${city.getHotalNumber()}"></td>
+    <td th:text="${city.getCreateTime()}">创建时间</td>
+    <td><input type="submit"></td>
+</tr>
+</tbody>
+</form>
+</body>
+</html>
