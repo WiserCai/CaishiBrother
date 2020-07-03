@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="caishi-admin" />
+        <module name="caishi-show" />
+        <module name="caishi-feign" />
+        <module name="caishi-gateway" />
+        <module name="caishi-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="caishi-admin" target="1.8" />
+      <module name="caishi-common" target="1.8" />
+      <module name="caishi-feign" target="1.8" />
+      <module name="caishi-gateway" target="1.8" />
+      <module name="caishi-home" target="1.8" />
+      <module name="caishi-show" target="1.8" />
+      <module name="CaiShiBrother" target="1.8" />
+      <module name="CaishiBrother" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CaiShiBrother" options="-parameters" />
+      <module name="CaishiBrother" options="-parameters" />
+      <module name="caishi-admin" options="-parameters" />
+      <module name="caishi-common" options="-parameters" />
+      <module name="caishi-feign" options="-parameters" />
+      <module name="caishi-gateway" options="-parameters" />
+      <module name="caishi-home" options="-parameters" />
+      <module name="caishi-show" options="-parameters" />
+    </option>
+  </component>
+</project>

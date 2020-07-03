@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CaishiBrother.iml" filepath="$PROJECT_DIR$/CaishiBrother.iml" />
+      <module fileurl="file://$PROJECT_DIR$/caishi-admin/caishi-admin.iml" filepath="$PROJECT_DIR$/caishi-admin/caishi-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/caishi-common/caishi-common.iml" filepath="$PROJECT_DIR$/caishi-common/caishi-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/caishi-feign/caishi-feign.iml" filepath="$PROJECT_DIR$/caishi-feign/caishi-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/caishi-gateway/caishi-gateway.iml" filepath="$PROJECT_DIR$/caishi-gateway/caishi-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/caishi-show/caishi-show.iml" filepath="$PROJECT_DIR$/caishi-show/caishi-show.iml" />
+    </modules>
+  </component>
+</project>

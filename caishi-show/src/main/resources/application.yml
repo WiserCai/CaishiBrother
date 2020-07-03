@@ -1,0 +1,26 @@
+server:
+  port: ${server.port}
+#开启Feign的断路器功能
+feign:
+  sentinel:
+    # 开启Sentinel对Feign的支持
+    enabled: ${feign.sentinel.enabled}
+  #  hystrix:
+  #    enabled: ${feign.hystrix.enabled}
+  client:
+    config:
+      MIRCO-TEACHER:
+        connectTimeout: ${feign.client.config.MIRCO-TEACHER.connectTimeout}
+        readTimeout: ${feign.client.config.MIRCO-TEACHER.readTimeout}
+      MIRCO-STUDENT:
+        connectTimeout: ${feign.client.config.MIRCO-STUDENT.connectTimeout}
+        readTimeout: ${feign.client.config.MIRCO-STUDENT.readTimeout}
+ribbon:
+  #配置的是连接超时
+  #  ConnectTimeout: 1000
+  #配置读超时
+  #  ReadTimeout: 1000
+  #配置ribbon的重试次数，默认是0
+  MaxAutoRetries: ${ribbon.MaxAutoRetries}
+  #配置ribbon的下个服务的重试次数，默认是1
+  MaxAutoRetriesNextServer: ${ribbon.MaxAutoRetriesNextServer}
