@@ -3,7 +3,6 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/caishi-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/caishi-common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/caishi-feign/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/caishi-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/caishi-show/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

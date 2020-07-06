@@ -9,7 +9,11 @@ spring:
     port: ${spring.redis.port}
     host: ${spring.redis.host}
     database: ${spring.redis.database}
-
+    #配置样式等静态资源的访问路径
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static,classpath:/public,classpath:/resources,classpath:/META-INF/resources
 server:
   port: ${server.port}
 #开启Feign的断路器功能

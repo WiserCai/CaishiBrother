@@ -1,3 +1,5 @@
+ip:
+  addr: 192.168.1.107:8848
 spring:
   application:
     name: caishi-show
@@ -5,17 +7,18 @@ spring:
     #    active: dev #开发环境，prod生产环境，test测试环境
     active: dev
   datasource:
-    url: jdbc:mysql://192.168.25.172:3306/caishibrother?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://192.168.1.108:3306/caishibrother?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+#    url: jdbc:mysql://192.168.25.172:3306/caishibrother?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: root
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.25.172:8848
+        server-addr: ${ip.addr}
         namespace: dev-123456 #指定配命名空间ID上去注册
       config:
-        server-addr: 192.168.25.172:8848
+        server-addr: ${ip.addr}
         file-extension: yaml #指定yml格式的配置
         group: DEV_GROUP #指定配置文件在nacos中的分组，不指定默认会在DEFAULT的分组找
         namespace: dev-123456 #指定配置文件在nacos中所属的命名空间ID
