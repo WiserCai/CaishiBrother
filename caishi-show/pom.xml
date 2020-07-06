@@ -95,6 +95,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
+<!--        工具类依赖-->
+        <dependency>
+            <groupId>com.caishi</groupId>
+            <artifactId>caishi-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
     </dependencies>
 
 

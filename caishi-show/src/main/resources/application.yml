@@ -4,6 +4,11 @@ spring:
     type: ${spring.datasource.type}
     username: ${spring.datasource.username}
     password: ${spring.datasource.password}
+  redis:
+    password: ${spring.redis.password}
+    port: ${spring.redis.port}
+    host: ${spring.redis.host}
+    database: ${spring.redis.database}
 
 server:
   port: ${server.port}
@@ -12,6 +17,7 @@ feign:
   sentinel:
     # 开启Sentinel对Feign的支持
     enabled: ${feign.sentinel.enabled}
+
   #  hystrix:
   #    enabled: ${feign.hystrix.enabled}
   client:
@@ -35,6 +41,7 @@ ribbon:
 mybatis-plus:
   type-aliases-package: ${mybatis-plus.type-aliases-package}
   mapper-locations: ${mybatis-plus.mapper-locations}
+
 #上次至阿里云的相关配置
 oss:
   endpoint: ${oss.endpoint}
