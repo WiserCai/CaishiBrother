@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
+import java.util.UUID;
 
 /**
  * @Author CYC
@@ -54,13 +56,31 @@ public class UserServiceImpl implements IUserService {
 
     //注册
     @Override
-    public String userRegister(TUser tUser){
+    public String userRegister(TUser tUser) throws RuntimeException{
 
-        int result = userMaper.insert(tUser);
+        try {
+            QueryWrapper queryWrapper =new QueryWrapper();
+            queryWrapper.eq("username", tUser.getUsername());
+            TUser tUser1 = userMaper.selectOne(queryWrapper);
+            if (tUser1 == null){
+                String salt = UUID.randomUUID().toString();
+                tUser.setSalt(salt);
 
-        if (result>0){
+                String encode = MD5HashUtil.encode(tUser.getPassword(), salt, tUser.hashCode());
+                tUser.setPassword(encode);
+                tUser.setStandby(String.valueOf(tUser.hashCode()));
+                tUser.setCreateTime(new Date());
+                tUser.setUpdateTime(new Date());
+            }
 
-            return "succeed";
+            int result = userMaper.insert(tUser);
+
+            if (result>0){
+
+                return "succeed";
+            }
+        } catch (Exception e) {
+            return "failed";
         }
         return "failed";
 

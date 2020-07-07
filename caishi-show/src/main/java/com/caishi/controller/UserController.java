@@ -38,7 +38,7 @@ public class UserController {
 
         }
 
-        return "register";
+        return "error";
     }
 }
 
