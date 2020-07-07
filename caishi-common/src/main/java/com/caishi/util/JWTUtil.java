@@ -13,6 +13,7 @@ import java.util.Date;
  * @create: 2020-05-29 00:26
  **/
 public class JWTUtil {
+
     //1.定义密钥
     private static final String SECRET = "@my=tonken.cecureat-User7568*/QI+-=";
 
@@ -24,6 +25,7 @@ public class JWTUtil {
      * @return
      */
     public static String createUserToken(TUser user){
+
         JwtBuilder jwtBuilder = Jwts.builder()
                 .setId(user.getId() + "") //设置令牌ID
                 .setSubject(user.getUsername()) //设置签发者
@@ -43,7 +45,9 @@ public class JWTUtil {
      * @return
      */
     public static TUser parseJwtToken(String token){
+
         TUser user = null;
+
         try {
 
             Claims body =(Claims) Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
@@ -53,6 +57,7 @@ public class JWTUtil {
             String nickname = String.valueOf(body.get("nickname"));
 
             user = new TUser().setId(id).setUsername(username).setNickName(nickname);
+
         } catch (ExpiredJwtException e) {
             e.printStackTrace();
         } catch (UnsupportedJwtException e) {
@@ -64,6 +69,7 @@ public class JWTUtil {
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
+
         return user;
     }
 

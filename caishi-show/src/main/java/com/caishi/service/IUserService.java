@@ -3,6 +3,8 @@ package com.caishi.service;
 import com.caishi.model.dto.LoginDto;
 import com.caishi.model.entity.TUser;
 
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @Author CYC
  * @Date 2020/7/6 0006 21:38
@@ -10,5 +12,10 @@ import com.caishi.model.entity.TUser;
  * @Description
  **/
 public interface IUserService {
-    TUser queryUserByUsername(LoginDto loginDto);
+
+    TUser queryUserByUsername(LoginDto loginDto, HttpServletResponse response);
+
+    public String userRegister(TUser tUser);
+
+
 }

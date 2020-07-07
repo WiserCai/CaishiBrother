@@ -25,7 +25,7 @@ public class TUser {
   private Date updateTime;
   private Integer idDelete;
   private String nickName;
-
+  private String email;
 
 
 }

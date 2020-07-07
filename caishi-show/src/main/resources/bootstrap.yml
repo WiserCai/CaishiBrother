@@ -1,17 +1,12 @@
 ip:
-  addr: 192.168.1.107:8848
+  addr: 192.168.25.172:8848
 spring:
   application:
-    name: caishi-show
+    name: caishi-show-company
   profiles:
     #    active: dev #开发环境，prod生产环境，test测试环境
     active: dev
-  datasource:
-    url: jdbc:mysql://192.168.1.108:3306/caishibrother?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
-#    url: jdbc:mysql://192.168.25.172:3306/caishibrother?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
-    type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: root
+
   cloud:
     nacos:
       discovery:
